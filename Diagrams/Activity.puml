@@ -1,0 +1,52 @@
+@startuml Activity_Recipe_Add
+
+|Client|
+start
+
+:User clicks "Adaugă Rețetă";
+
+:Check authentication;
+if (User authenticated?) then (no)
+  :Show Login / Register dialog;
+  if (Login successful?) then (yes)
+    :Open Recipe Editor (empty);
+  else (no)
+    :Show message "Trebuie sa fii conectat pentru a crea o reteta";
+    stop
+  endif
+else (yes)
+  :Open Recipe Editor (empty);
+endif
+
+:User enters title, main image, content, categories, visibility (public/private);
+if (Title and main image provided?) then (no)
+  :Show validation error "Titlu si imaginea principala sunt obligatorii";
+  stop
+else (yes)
+  :Validate image format and size (client-side);
+  if (Image format JPG or PNG and size <= 5MB?) then (no)
+    :Show image validation error (format/size);
+    stop
+  else (yes)
+    |Server|
+    :Receive images; validate server-side; resize and store;
+    :Create recipe record (owner = user, visibility = chosen);
+    if (visibility == public and categories empty?) then (yes)
+      |Client|
+      :Prompt user to select at least one category;
+      :User selects categories;
+      |Server|
+      :Persist recipe; commit transaction; index for search;
+    else (no)
+      :Persist recipe; commit transaction; index for search;
+    endif
+    |Client|
+    :Show success notification;
+    if (visibility == public) then (yes)
+      :Recipe appears in public list/search results;
+    endif
+    stop
+  endif
+endif
+
+@enduml
