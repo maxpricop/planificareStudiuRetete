@@ -35,15 +35,13 @@ else (yes)
       |Client|
       :Prompt user to select at least one category;
       :User selects categories;
-      |Server|
-      :Persist recipe; commit transaction; index for search;
     else (no)
-      :Persist recipe; commit transaction; index for search;
     endif
     |Client|
     :Show success notification;
     if (visibility == public) then (yes)
       :Recipe appears in public list/search results;
+    else (no)
     endif
     stop
   endif
