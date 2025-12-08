@@ -3,6 +3,8 @@
 ## Introducere 
 `PlanificareStudiuRetete` este un proiect care modelează o aplicație desktop pentru descoperirea, organizarea și partajarea de rețete culinare. Scopul principal este documentarea cerințelor (SRS) și a diagramelor (Use Case, Activity) pentru funcționalitățile de bază: căutare, vizualizare, creare/actualizare/ștergere rețetă, gestionare conturi, favoriting și moderare.
 
+Link prototip figma: https://www.figma.com/design/nC56n5znSmQPqaeojxAIWb/Retete-Culinare?node-id=83-2&t=CkCOVOqXyfHlzWHJ-1
+
 ## Funcționalități principale
 - **Căutare & Vizualizare**: listare rețete, filtrare după categorie/ingrediente/dificultate.
 - **Autentificare**: creare cont, login; funcții extinse disponibile doar utilizatorilor autentificați.
