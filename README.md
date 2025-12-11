@@ -19,6 +19,11 @@ Link prototip figma: https://www.figma.com/design/nC56n5znSmQPqaeojxAIWb/Retete-
 	- `Diagrams/Activity.puml` : Activity diagram pentru fluxul de adăugare rețetă.
 	- `Diagrams/Use Case.puml` : diagrama Use Case.
 
+## Autori
+
+- Pricop Maxim
+- Celac Marinela
+
 ## Comenzi Git (exemple PowerShell)
 Următoarele comenzi arată pașii uzuali de inițializare a unui repo local și setare remote până la primul commit/push.
 
